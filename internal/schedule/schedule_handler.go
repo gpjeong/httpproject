@@ -1,6 +1,7 @@
 package schedule
 
 import (
+	"fmt"
 	"github.com/go-co-op/gocron"
 	"httpproject/client"
 	"time"
@@ -13,6 +14,7 @@ func OjtProjectScheduler() {
 	gocron := gocron.NewScheduler(time.UTC)
 
 	gocron.Cron(OneMinuteCron).Do(func() {
+		fmt.Println("test")
 		client.GetApiData("정광필")
 	})
 
