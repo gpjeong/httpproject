@@ -25,7 +25,7 @@ func ApiTest() {
 
 			dataCount, err := datastore.DBService().GetCountCustomQuery(tableStruct, query)
 			if err != nil {
-				logger.Log.Error().Msgf("DB Get Name error: %s", err.Error())
+				logger.Log.Error().Msgf("DB Get Name error :", err.Error())
 			}
 
 			if dataCount != 0 {
@@ -67,33 +67,42 @@ func ApiTest() {
 
 	// POST 요청
 	r.POST("/post", func(c *gin.Context) {
-		inputParam := c.Query("input")
+		idParam := c.Query("id")
+		nameParam := c.Query("name")
 
-		if inputParam == "" {
+		if idParam == "" || nameParam == "" {
 			c.JSON(http.StatusBadRequest, gin.H{"error": "input 파라미터가 필요합니다"})
 		} else {
+			dataList := make([]OjtInfo, 0)
+			data := OjtInfo{
+				Id:   idParam,
+				Name: nameParam,
+			}
+			dataList = append(dataList, data)
+
 			query := make(map[string]interface{}, 0)
-			query["name = ?"] = inputParam
+			query["id = ?"] = idParam
 
 			dataCount, err := datastore.DBService().GetCountCustomQuery(tableStruct, query)
 			if err != nil {
-				logger.Log.Error().Msgf("Vrops Alerts get id, provider error: %s", err.Error())
+				logger.Log.Error().Msgf("DB Get Name error:", err.Error())
 			}
 
-			if dataCount != 0 {
+			if dataCount == 0 {
+				_, err := datastore.DBService().CreateData(dataList)
+				if err != nil {
+					logger.Log.Error().Msgf("Create Post Data Failed :", err.Error())
+				}
 				c.JSON(200, gin.H{
-					"message": fmt.Sprintf("%s 조회에 성공하였습니다", inputParam),
+					"message": fmt.Sprintf("Id : %s, name : %s 생성에 성공하였습니다", idParam, nameParam),
 				})
 			} else {
 				c.JSON(500, gin.H{
-					"message": fmt.Sprintf("%s 조회에 실패하였습니다", inputParam),
+					"message": fmt.Sprintf("Id : %s, name : %s 생성에 실패하였습니다", idParam, nameParam),
 				})
 			}
 		}
 
-		c.JSON(http.StatusOK, gin.H{
-			"message": "POST request for resource",
-		})
 	})
 
 	// 서버 시작

@@ -57,3 +57,22 @@
 {"severity":"INFO","time":"2023-11-01T18:12:10+09:00","message":"Started at : 2023-11-01T18:12:10+09:00"}
 {"severity":"INFO","time":"2023-11-01T18:12:10+09:00","message":"Server Logger Level : %!v(MISSING)TRACE"}
 {"severity":"INFO","time":"2023-11-01T18:12:10+09:00","message":"postgres connect Info : host=localhost port=5432 user=rule dbname=rule_engine password=okestro2018 sslmode=disable"}
+{"severity":"INFO","fileLogging":true,"jsonLogOutput":true,"logDirectory":"./data/logs","fileName":"rule_collector.log","maxSizeMB":200,"maxBackups":30,"maxAgeInDays":90,"time":"2023-11-01T19:51:42+09:00","message":"logging configured"}
+{"severity":"INFO","time":"2023-11-01T19:51:42+09:00","message":"Started at : 2023-11-01T19:51:42+09:00"}
+{"severity":"INFO","time":"2023-11-01T19:51:42+09:00","message":"Server Logger Level : %!v(MISSING)TRACE"}
+{"severity":"INFO","time":"2023-11-01T19:51:42+09:00","message":"postgres connect Info : host=localhost port=5432 user=rule dbname=rule_engine password=okestro2018 sslmode=disable"}
+{"severity":"ERROR","time":"2023-11-01T19:51:50+09:00","message":"Get Count Error: ERROR: relation \"ojt_data_tbls\" does not exist (SQLSTATE 42P01)"}
+{"severity":"ERROR","time":"2023-11-01T19:51:50+09:00","message":"DB Get Name error: ERROR: relation \"ojt_data_tbls\" does not exist (SQLSTATE 42P01)"}
+{"severity":"ERROR","time":"2023-11-01T19:51:56+09:00","message":"Get Count Error: ERROR: relation \"ojt_data_tbls\" does not exist (SQLSTATE 42P01)"}
+{"severity":"ERROR","time":"2023-11-01T19:51:56+09:00","message":"DB Get Name error: ERROR: relation \"ojt_data_tbls\" does not exist (SQLSTATE 42P01)"}
+{"severity":"ERROR","time":"2023-11-01T19:51:57+09:00","message":"Get Count Error: ERROR: relation \"ojt_data_tbls\" does not exist (SQLSTATE 42P01)"}
+{"severity":"ERROR","time":"2023-11-01T19:51:57+09:00","message":"DB Get Name error: ERROR: relation \"ojt_data_tbls\" does not exist (SQLSTATE 42P01)"}
+{"severity":"INFO","fileLogging":true,"jsonLogOutput":true,"logDirectory":"./data/logs","fileName":"rule_collector.log","maxSizeMB":200,"maxBackups":30,"maxAgeInDays":90,"time":"2023-11-01T19:57:50+09:00","message":"logging configured"}
+{"severity":"INFO","time":"2023-11-01T19:57:50+09:00","message":"Started at : 2023-11-01T19:57:50+09:00"}
+{"severity":"INFO","time":"2023-11-01T19:57:50+09:00","message":"Server Logger Level : %!v(MISSING)TRACE"}
+{"severity":"INFO","time":"2023-11-01T19:57:50+09:00","message":"postgres connect Info : host=localhost port=5432 user=rule dbname=rule_engine password=okestro2018 sslmode=disable"}
+{"severity":"INFO","fileLogging":true,"jsonLogOutput":true,"logDirectory":"./data/logs","fileName":"rule_collector.log","maxSizeMB":200,"maxBackups":30,"maxAgeInDays":90,"time":"2023-11-01T23:48:09+09:00","message":"logging configured"}
+{"severity":"INFO","time":"2023-11-01T23:48:09+09:00","message":"Started at : 2023-11-01T23:48:09+09:00"}
+{"severity":"INFO","time":"2023-11-01T23:48:09+09:00","message":"Server Logger Level : %!v(MISSING)TRACE"}
+{"severity":"INFO","time":"2023-11-01T23:48:09+09:00","message":"postgres connect Info : host=localhost port=5432 user=rule dbname=rule_engine password=okestro2018 sslmode=disable"}
+{"severity":"DEBUG","time":"2023-11-01T23:48:15+09:00","message":"Create Data :%!(EXTRA []server.OjtInfo=[{5 정광필}])"}
