@@ -6,10 +6,16 @@ import (
 	"httpproject/rest"
 	"httpproject/util/logger"
 	"net/http"
+	"time"
 )
 
+type ResponseData struct {
+	Message string `json:"message"`
+}
+
 func GetApiData(inputData string) {
-	url := config.ServerConfig.ApiInfo.ApiHost + ":" + config.ServerConfig.ApiInfo.ApiPort + "/get?input=" + inputData
+	time.Sleep(2 * time.Second)
+	url := "http://" + config.ServerConfig.ApiInfo.ApiHost + ":" + config.ServerConfig.ApiInfo.ApiPort + "/get?name=" + inputData
 
 	resp, statusCode, err := rest.RequetApiMethod(url, "GET")
 
@@ -25,6 +31,6 @@ func GetApiData(inputData string) {
 	}
 
 	if resp != nil {
-		fmt.Println(resp)
+		fmt.Println(string(resp))
 	}
 }

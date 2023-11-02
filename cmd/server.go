@@ -48,14 +48,18 @@ func logoPrint() {
 }
 
 func ServerRun() {
+
 	config.DefaultServiceConfigFromEnv()
 	rest.NewClientInit()
 	datastore.TaskManger = datastore.NewTaskManager()
-	server.ApiTest()
 
 	var wg sync.WaitGroup
 	wg.Add(2)
 
+	go func() {
+		defer wg.Done()
+		server.ApiTest()
+	}()
 	go func() {
 		defer wg.Done()
 		schedule.OjtProjectScheduler()
