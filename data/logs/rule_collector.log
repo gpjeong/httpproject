@@ -76,3 +76,36 @@
 {"severity":"INFO","time":"2023-11-01T23:48:09+09:00","message":"Server Logger Level : %!v(MISSING)TRACE"}
 {"severity":"INFO","time":"2023-11-01T23:48:09+09:00","message":"postgres connect Info : host=localhost port=5432 user=rule dbname=rule_engine password=okestro2018 sslmode=disable"}
 {"severity":"DEBUG","time":"2023-11-01T23:48:15+09:00","message":"Create Data :%!(EXTRA []server.OjtInfo=[{5 정광필}])"}
+{"severity":"INFO","fileLogging":true,"jsonLogOutput":true,"logDirectory":"./data/logs","fileName":"rule_collector.log","maxSizeMB":200,"maxBackups":30,"maxAgeInDays":90,"time":"2023-11-02T09:36:40+09:00","message":"logging configured"}
+{"severity":"INFO","time":"2023-11-02T09:36:40+09:00","message":"Started at : 2023-11-02T09:36:40+09:00"}
+{"severity":"INFO","time":"2023-11-02T09:36:40+09:00","message":"Server Logger Level : %!v(MISSING)TRACE"}
+{"severity":"INFO","time":"2023-11-02T09:36:40+09:00","message":"postgres connect Info : host=localhost port=5432 user=rule dbname=rule_engine password=okestro2018 sslmode=disable"}
+{"severity":"INFO","fileLogging":true,"jsonLogOutput":true,"logDirectory":"./data/logs","fileName":"rule_collector.log","maxSizeMB":200,"maxBackups":30,"maxAgeInDays":90,"time":"2023-11-02T09:40:39+09:00","message":"logging configured"}
+{"severity":"INFO","time":"2023-11-02T09:40:39+09:00","message":"Started at : 2023-11-02T09:40:39+09:00"}
+{"severity":"INFO","time":"2023-11-02T09:40:39+09:00","message":"Server Logger Level : %!v(MISSING)TRACE"}
+{"severity":"INFO","time":"2023-11-02T09:40:39+09:00","message":"postgres connect Info : host=localhost port=5432 user=rule dbname=rule_engine password=okestro2018 sslmode=disable"}
+{"severity":"INFO","fileLogging":true,"jsonLogOutput":true,"logDirectory":"./data/logs","fileName":"rule_collector.log","maxSizeMB":200,"maxBackups":30,"maxAgeInDays":90,"time":"2023-11-02T09:42:55+09:00","message":"logging configured"}
+{"severity":"INFO","time":"2023-11-02T09:42:55+09:00","message":"Started at : 2023-11-02T09:42:55+09:00"}
+{"severity":"INFO","time":"2023-11-02T09:42:55+09:00","message":"Server Logger Level : %!v(MISSING)TRACE"}
+{"severity":"INFO","time":"2023-11-02T09:42:55+09:00","message":"postgres connect Info : host=localhost port=5432 user=rule dbname=rule_engine password=okestro2018 sslmode=disable"}
+{"severity":"INFO","fileLogging":true,"jsonLogOutput":true,"logDirectory":"./data/logs","fileName":"rule_collector.log","maxSizeMB":200,"maxBackups":30,"maxAgeInDays":90,"time":"2023-11-02T09:45:24+09:00","message":"logging configured"}
+{"severity":"INFO","time":"2023-11-02T09:45:24+09:00","message":"Started at : 2023-11-02T09:45:24+09:00"}
+{"severity":"INFO","time":"2023-11-02T09:45:24+09:00","message":"Server Logger Level : %!v(MISSING)TRACE"}
+{"severity":"INFO","time":"2023-11-02T09:45:24+09:00","message":"postgres connect Info : host=localhost port=5432 user=rule dbname=rule_engine password=okestro2018 sslmode=disable"}
+{"severity":"INFO","fileLogging":true,"jsonLogOutput":true,"logDirectory":"./data/logs","fileName":"rule_collector.log","maxSizeMB":200,"maxBackups":30,"maxAgeInDays":90,"time":"2023-11-02T09:47:05+09:00","message":"logging configured"}
+{"severity":"INFO","time":"2023-11-02T09:47:05+09:00","message":"Started at : 2023-11-02T09:47:05+09:00"}
+{"severity":"INFO","time":"2023-11-02T09:47:05+09:00","message":"Server Logger Level : %!v(MISSING)TRACE"}
+{"severity":"INFO","time":"2023-11-02T09:47:05+09:00","message":"postgres connect Info : host=localhost port=5432 user=rule dbname=rule_engine password=okestro2018 sslmode=disable"}
+{"severity":"INFO","fileLogging":true,"jsonLogOutput":true,"logDirectory":"./data/logs","fileName":"rule_collector.log","maxSizeMB":200,"maxBackups":30,"maxAgeInDays":90,"time":"2023-11-02T09:49:35+09:00","message":"logging configured"}
+{"severity":"INFO","time":"2023-11-02T09:49:35+09:00","message":"Started at : 2023-11-02T09:49:35+09:00"}
+{"severity":"INFO","time":"2023-11-02T09:49:35+09:00","message":"Server Logger Level : %!v(MISSING)TRACE"}
+{"severity":"INFO","time":"2023-11-02T09:49:35+09:00","message":"postgres connect Info : host=localhost port=5432 user=rule dbname=rule_engine password=okestro2018 sslmode=disable"}
+{"severity":"INFO","fileLogging":true,"jsonLogOutput":true,"logDirectory":"./data/logs","fileName":"rule_collector.log","maxSizeMB":200,"maxBackups":30,"maxAgeInDays":90,"time":"2023-11-02T09:50:41+09:00","message":"logging configured"}
+{"severity":"INFO","time":"2023-11-02T09:50:41+09:00","message":"Started at : 2023-11-02T09:50:41+09:00"}
+{"severity":"INFO","time":"2023-11-02T09:50:41+09:00","message":"Server Logger Level : %!v(MISSING)TRACE"}
+{"severity":"INFO","time":"2023-11-02T09:50:41+09:00","message":"postgres connect Info : host=localhost port=5432 user=rule dbname=rule_engine password=okestro2018 sslmode=disable"}
+{"severity":"INFO","fileLogging":true,"jsonLogOutput":true,"logDirectory":"./data/logs","fileName":"rule_collector.log","maxSizeMB":200,"maxBackups":30,"maxAgeInDays":90,"time":"2023-11-02T09:53:16+09:00","message":"logging configured"}
+{"severity":"INFO","time":"2023-11-02T09:53:16+09:00","message":"Started at : 2023-11-02T09:53:16+09:00"}
+{"severity":"INFO","time":"2023-11-02T09:53:16+09:00","message":"Server Logger Level : %!v(MISSING)TRACE"}
+{"severity":"INFO","time":"2023-11-02T09:53:16+09:00","message":"postgres connect Info : host=localhost port=5432 user=rule dbname=rule_engine password=okestro2018 sslmode=disable"}
+{"severity":"DEBUG","time":"2023-11-02T09:54:01+09:00","message":"Delete Custom Data :%!(EXTRA server.OjtInfo={1 정광필})"}
