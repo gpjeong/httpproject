@@ -2,12 +2,20 @@ package rest
 
 import (
 	"bytes"
+	"httpproject/util"
 	"httpproject/util/logger"
 )
 
-func RequetApiMethod(apiUri string, method string) ([]byte, int, error) {
+func RequetApiMethod(apiUri string, method string, reqBody map[string]interface{}) ([]byte, int, error) {
 
-	resp, statusCode, err := ExecuteService(apiUri, method, &bytes.Buffer{})
+	var reqBodyBuffer *bytes.Buffer
+	if reqBody != nil {
+		reqBodyBuffer, _ = util.JSONMarshalBuffer(reqBody)
+	} else {
+		reqBodyBuffer = &bytes.Buffer{}
+	}
+
+	resp, statusCode, err := ExecuteService(apiUri, method, reqBodyBuffer)
 	if err != nil && statusCode != 200 {
 		logger.Log.Error().Msgf("Rest Execute Service Error: %s", err.Error())
 		return nil, statusCode, err

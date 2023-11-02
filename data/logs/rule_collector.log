@@ -257,3 +257,46 @@
 {"severity":"INFO","time":"2023-11-02T16:09:08+09:00","message":"Started at : 2023-11-02T16:09:08+09:00"}
 {"severity":"INFO","time":"2023-11-02T16:09:08+09:00","message":"Server Logger Level : %!v(MISSING)TRACE"}
 {"severity":"INFO","time":"2023-11-02T16:09:08+09:00","message":"postgres connect Info : host=localhost port=5432 user=rule dbname=rule_engine password=okestro2018 sslmode=disable"}
+{"severity":"INFO","fileLogging":true,"jsonLogOutput":true,"logDirectory":"./data/logs","fileName":"rule_collector.log","maxSizeMB":200,"maxBackups":30,"maxAgeInDays":90,"time":"2023-11-02T17:25:35+09:00","message":"logging configured"}
+{"severity":"INFO","time":"2023-11-02T17:25:35+09:00","message":"Started at : 2023-11-02T17:25:35+09:00"}
+{"severity":"INFO","time":"2023-11-02T17:25:35+09:00","message":"Server Logger Level : %!v(MISSING)TRACE"}
+{"severity":"INFO","time":"2023-11-02T17:25:35+09:00","message":"postgres connect Info : host=localhost port=5432 user=rule dbname=rule_engine password=okestro2018 sslmode=disable"}
+{"severity":"DEBUG","time":"2023-11-02T17:26:04+09:00","message":"Create Data :%!(EXTRA []server.OjtInfo=[{7 임영웅}])"}
+{"severity":"ERROR","time":"2023-11-02T17:27:04+09:00","message":"GET OJT Api failed :%!(EXTRA string=StatusCode: 500)"}
+{"severity":"INFO","fileLogging":true,"jsonLogOutput":true,"logDirectory":"./data/logs","fileName":"rule_collector.log","maxSizeMB":200,"maxBackups":30,"maxAgeInDays":90,"time":"2023-11-02T17:27:44+09:00","message":"logging configured"}
+{"severity":"INFO","time":"2023-11-02T17:27:44+09:00","message":"Started at : 2023-11-02T17:27:44+09:00"}
+{"severity":"INFO","time":"2023-11-02T17:27:44+09:00","message":"Server Logger Level : %!v(MISSING)TRACE"}
+{"severity":"INFO","time":"2023-11-02T17:27:44+09:00","message":"postgres connect Info : host=localhost port=5432 user=rule dbname=rule_engine password=okestro2018 sslmode=disable"}
+{"severity":"ERROR","time":"2023-11-02T17:28:04+09:00","message":"Post OJT Api failed :%!(EXTRA string=StatusCode: 500)"}
+{"severity":"ERROR","time":"2023-11-02T17:29:04+09:00","message":"Post OJT Api failed :%!(EXTRA string=StatusCode: 500)"}
+{"severity":"ERROR","time":"2023-11-02T17:30:04+09:00","message":"Post OJT Api failed :%!(EXTRA string=StatusCode: 500)"}
+{"severity":"INFO","fileLogging":true,"jsonLogOutput":true,"logDirectory":"./data/logs","fileName":"rule_collector.log","maxSizeMB":200,"maxBackups":30,"maxAgeInDays":90,"time":"2023-11-02T17:30:27+09:00","message":"logging configured"}
+{"severity":"INFO","time":"2023-11-02T17:30:27+09:00","message":"Started at : 2023-11-02T17:30:27+09:00"}
+{"severity":"INFO","time":"2023-11-02T17:30:27+09:00","message":"Server Logger Level : %!v(MISSING)TRACE"}
+{"severity":"INFO","time":"2023-11-02T17:30:27+09:00","message":"postgres connect Info : host=localhost port=5432 user=rule dbname=rule_engine password=okestro2018 sslmode=disable"}
+{"severity":"DEBUG","time":"2023-11-02T17:31:04+09:00","message":"Create Data :%!(EXTRA []server.OjtInfo=[{7 임영웅}])"}
+{"severity":"ERROR","time":"2023-11-02T17:31:06+09:00","message":"Delete OJT Api failed :%!(EXTRA string=StatusCode: 404)"}
+{"severity":"ERROR","time":"2023-11-02T17:32:04+09:00","message":"Post OJT Api failed :%!(EXTRA string=StatusCode: 500)"}
+{"severity":"ERROR","time":"2023-11-02T17:32:06+09:00","message":"Delete OJT Api failed :%!(EXTRA string=StatusCode: 404)"}
+{"severity":"INFO","fileLogging":true,"jsonLogOutput":true,"logDirectory":"./data/logs","fileName":"rule_collector.log","maxSizeMB":200,"maxBackups":30,"maxAgeInDays":90,"time":"2023-11-02T17:33:56+09:00","message":"logging configured"}
+{"severity":"INFO","time":"2023-11-02T17:33:56+09:00","message":"Started at : 2023-11-02T17:33:56+09:00"}
+{"severity":"INFO","time":"2023-11-02T17:33:56+09:00","message":"Server Logger Level : %!v(MISSING)TRACE"}
+{"severity":"INFO","time":"2023-11-02T17:33:56+09:00","message":"postgres connect Info : host=localhost port=5432 user=rule dbname=rule_engine password=okestro2018 sslmode=disable"}
+{"severity":"ERROR","time":"2023-11-02T17:34:04+09:00","message":"Post OJT Api failed :%!(EXTRA string=StatusCode: 404)"}
+{"severity":"ERROR","time":"2023-11-02T17:34:06+09:00","message":"Delete OJT Api failed :%!(EXTRA string=StatusCode: 404)"}
+{"severity":"INFO","fileLogging":true,"jsonLogOutput":true,"logDirectory":"./data/logs","fileName":"rule_collector.log","maxSizeMB":200,"maxBackups":30,"maxAgeInDays":90,"time":"2023-11-02T17:34:37+09:00","message":"logging configured"}
+{"severity":"INFO","time":"2023-11-02T17:34:37+09:00","message":"Started at : 2023-11-02T17:34:37+09:00"}
+{"severity":"INFO","time":"2023-11-02T17:34:37+09:00","message":"Server Logger Level : %!v(MISSING)TRACE"}
+{"severity":"INFO","time":"2023-11-02T17:34:37+09:00","message":"postgres connect Info : host=localhost port=5432 user=rule dbname=rule_engine password=okestro2018 sslmode=disable"}
+{"severity":"ERROR","time":"2023-11-02T17:35:04+09:00","message":"Post OJT Api failed :%!(EXTRA string=StatusCode: 500)"}
+{"severity":"DEBUG","time":"2023-11-02T17:35:06+09:00","message":"Delete Custom Data :%!(EXTRA server.OjtInfo={7 임영웅})"}
+{"severity":"DEBUG","time":"2023-11-02T17:36:04+09:00","message":"Create Data :%!(EXTRA []server.OjtInfo=[{7 임영웅}])"}
+{"severity":"DEBUG","time":"2023-11-02T17:36:06+09:00","message":"Delete Custom Data :%!(EXTRA server.OjtInfo={7 임영웅})"}
+{"severity":"INFO","fileLogging":true,"jsonLogOutput":true,"logDirectory":"./data/logs","fileName":"rule_collector.log","maxSizeMB":200,"maxBackups":30,"maxAgeInDays":90,"time":"2023-11-02T17:36:37+09:00","message":"logging configured"}
+{"severity":"INFO","time":"2023-11-02T17:36:37+09:00","message":"Started at : 2023-11-02T17:36:37+09:00"}
+{"severity":"INFO","time":"2023-11-02T17:36:37+09:00","message":"Server Logger Level : %!v(MISSING)TRACE"}
+{"severity":"INFO","time":"2023-11-02T17:36:37+09:00","message":"postgres connect Info : host=localhost port=5432 user=rule dbname=rule_engine password=okestro2018 sslmode=disable"}
+{"severity":"DEBUG","time":"2023-11-02T17:37:04+09:00","message":"Create Data :%!(EXTRA []server.OjtInfo=[{7 임영웅}])"}
+{"severity":"DEBUG","time":"2023-11-02T17:37:06+09:00","message":"Delete Custom Data :%!(EXTRA server.OjtInfo={7 임영웅})"}
+{"severity":"DEBUG","time":"2023-11-02T17:38:04+09:00","message":"Create Data :%!(EXTRA []server.OjtInfo=[{7 임영웅}])"}
+{"severity":"DEBUG","time":"2023-11-02T17:38:06+09:00","message":"Delete Custom Data :%!(EXTRA server.OjtInfo={7 임영웅})"}

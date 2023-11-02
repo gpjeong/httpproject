@@ -9,15 +9,15 @@ import (
 	"time"
 )
 
-type ResponseData struct {
-	Message string `json:"message"`
-}
-
-func GetApiData(inputData string) {
+func DeleteApiData(id string, name string) {
 	time.Sleep(2 * time.Second)
-	url := "http://" + config.ServerConfig.ApiInfo.ApiHost + ":" + config.ServerConfig.ApiInfo.ApiPort + "/get?name=" + inputData
+	url := "http://" + config.ServerConfig.ApiInfo.ApiHost + ":" + config.ServerConfig.ApiInfo.ApiPort + "/delete"
 
-	resp, statusCode, err := rest.RequetApiMethod(url, "GET", nil)
+	reqData := make(map[string]interface{})
+	reqData["id"] = id
+	reqData["name"] = name
+
+	resp, statusCode, err := rest.RequetApiMethod(url, "DELETE", reqData)
 
 	if statusCode != http.StatusOK {
 		var statusMessage string
@@ -27,7 +27,7 @@ func GetApiData(inputData string) {
 			// 400 관련 에러는 에러 메시지가 null 값으로 return 되어 statusCode만 로그에 출력
 			statusMessage = fmt.Sprintf("StatusCode: %d", statusCode)
 		}
-		logger.Log.Error().Msgf("GET OJT Api failed :", statusMessage)
+		logger.Log.Error().Msgf("Delete OJT Api failed :", statusMessage)
 	}
 
 	if resp != nil {

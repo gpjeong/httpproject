@@ -38,7 +38,7 @@ func ApiTest() {
 					"message": fmt.Sprintf("%s 조회에 성공하였습니다", nameParam),
 				})
 			} else {
-				c.JSON(500, gin.H{
+				c.JSON(200, gin.H{
 					"message": fmt.Sprintf("%s 조회에 실패하였습니다", nameParam),
 				})
 			}
@@ -90,7 +90,7 @@ func ApiTest() {
 					"message": fmt.Sprintf("Id : %s, name : %s 삭제 성공하였습니다", idParam, nameParam),
 				})
 			} else {
-				c.JSON(500, gin.H{
+				c.JSON(200, gin.H{
 					"message": fmt.Sprintf("Id : %s, name : %s 삭제 실패하였습니다", idParam, nameParam),
 				})
 			}
@@ -140,7 +140,7 @@ func ApiTest() {
 					"message": fmt.Sprintf("Id : %s, name : %s 생성에 성공하였습니다", idParam, nameParam),
 				})
 			} else {
-				c.JSON(500, gin.H{
+				c.JSON(200, gin.H{
 					"message": fmt.Sprintf("Id : %s, name : %s 생성에 실패하였습니다", idParam, nameParam),
 				})
 			}
