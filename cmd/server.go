@@ -51,7 +51,6 @@ func ServerRun() {
 	config.DefaultServiceConfigFromEnv()
 	rest.NewClientInit()
 	datastore.TaskManger = datastore.NewTaskManager()
-
 	server.ApiTest()
 
 	var wg sync.WaitGroup

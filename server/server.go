@@ -9,13 +9,17 @@ import (
 	"net/http"
 )
 
+type RequestData struct {
+	Id   string `json:"id"`
+	Name string `json:"name"`
+}
+
 func ApiTest() {
 	r := gin.Default()
 	tableStruct := &OjtInfo{}
 
 	// GET 요청
 	r.GET("/get", func(c *gin.Context) {
-
 		nameParam := c.Query("name")
 
 		if nameParam == "" {
@@ -52,12 +56,15 @@ func ApiTest() {
 
 	// DELETE 요청
 	r.DELETE("/delete", func(c *gin.Context) {
-		idParam := c.DefaultQuery("id", "")
-		nameParam := c.DefaultQuery("name", "")
+		var requestData RequestData
 
-		if nameParam == "" || idParam == "" {
-			c.JSON(http.StatusBadRequest, gin.H{"error": "input 파라미터가 필요합니다"})
+		err := c.ShouldBindJSON(&requestData)
+		if err != nil || requestData.Id == "" || requestData.Name == "" {
+			c.JSON(http.StatusBadRequest, gin.H{"error": "input body의 입력 형식이 잘못되었거나 필드의 데이터가 없습니다"})
 		} else {
+			idParam := requestData.Id
+			nameParam := requestData.Name
+
 			dataList := make([]OjtInfo, 0)
 			data := OjtInfo{
 				Id:   idParam,
@@ -101,12 +108,14 @@ func ApiTest() {
 
 	// POST 요청
 	r.POST("/post", func(c *gin.Context) {
-		idParam := c.Query("id")
-		nameParam := c.Query("name")
+		var requestData RequestData
 
-		if idParam == "" || nameParam == "" {
-			c.JSON(http.StatusBadRequest, gin.H{"error": "input 파라미터가 필요합니다"})
+		err := c.ShouldBindJSON(&requestData)
+		if err != nil || requestData.Id == "" || requestData.Name == "" {
+			c.JSON(http.StatusBadRequest, gin.H{"error": "input body의 입력 형식이 잘못되었거나 필드의 데이터가 없습니다"})
 		} else {
+			idParam := requestData.Id
+			nameParam := requestData.Name
 			dataList := make([]OjtInfo, 0)
 			data := OjtInfo{
 				Id:   idParam,
