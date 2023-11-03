@@ -1,8 +1,9 @@
 package server
 
 type OjtInfo struct {
-	Id   string `gorm:"column:id"`
-	Name string `gorm:"column:name"`
+	Id      string `gorm:"column:id"`
+	Name    string `gorm:"column:name"`
+	Balance string `gorm:"column:balance"`
 }
 
 func (OjtInfo) TableName() string {

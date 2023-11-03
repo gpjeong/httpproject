@@ -9,7 +9,7 @@ import (
 	"time"
 )
 
-func DeleteApiData(id string, name string) {
+func DeleteApiData(id, name string) {
 	time.Sleep(2 * time.Second)
 	url := "http://" + config.ServerConfig.ApiInfo.ApiHost + ":" + config.ServerConfig.ApiInfo.ApiPort + "/delete"
 

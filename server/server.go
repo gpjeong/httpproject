@@ -10,8 +10,9 @@ import (
 )
 
 type RequestData struct {
-	Id   string `json:"id"`
-	Name string `json:"name"`
+	Id      string `json:"id"`
+	Name    string `json:"name"`
+	Balance string `json:"balance"`
 }
 
 func ApiTest() {
@@ -64,11 +65,13 @@ func ApiTest() {
 		} else {
 			idParam := requestData.Id
 			nameParam := requestData.Name
+			balanceParam := requestData.Balance
 
 			dataList := make([]OjtInfo, 0)
 			data := OjtInfo{
-				Id:   idParam,
-				Name: nameParam,
+				Id:      idParam,
+				Name:    nameParam,
+				Balance: balanceParam,
 			}
 			dataList = append(dataList, data)
 
@@ -116,10 +119,13 @@ func ApiTest() {
 		} else {
 			idParam := requestData.Id
 			nameParam := requestData.Name
+			balanceParam := requestData.Balance
+
 			dataList := make([]OjtInfo, 0)
 			data := OjtInfo{
-				Id:   idParam,
-				Name: nameParam,
+				Id:      idParam,
+				Name:    nameParam,
+				Balance: balanceParam,
 			}
 			dataList = append(dataList, data)
 
@@ -134,7 +140,7 @@ func ApiTest() {
 			if dataCount == 0 {
 				_, err := datastore.DBService().CreateData(dataList)
 				if err != nil {
-					logger.Log.Error().Msgf("Create Post Data Failed :", err.Error())
+					logger.Log.Error().Msgf("Post Data Failed :", err.Error())
 				}
 				c.JSON(200, gin.H{
 					"message": fmt.Sprintf("Id : %s, name : %s 생성에 성공하였습니다", idParam, nameParam),

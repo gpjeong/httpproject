@@ -9,10 +9,6 @@ import (
 	"time"
 )
 
-type ResponseData struct {
-	Message string `json:"message"`
-}
-
 func GetApiData(inputData string) {
 	time.Sleep(2 * time.Second)
 	url := "http://" + config.ServerConfig.ApiInfo.ApiHost + ":" + config.ServerConfig.ApiInfo.ApiPort + "/get?name=" + inputData

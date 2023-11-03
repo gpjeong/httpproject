@@ -9,13 +9,14 @@ import (
 	"time"
 )
 
-func PostApiData(id string, name string) {
+func PostApiData(id, name, balance string) {
 	time.Sleep(2 * time.Second)
 	url := "http://" + config.ServerConfig.ApiInfo.ApiHost + ":" + config.ServerConfig.ApiInfo.ApiPort + "/post"
 
 	reqData := make(map[string]interface{})
 	reqData["id"] = id
 	reqData["name"] = name
+	reqData["balance"] = balance
 
 	resp, statusCode, err := rest.RequetApiMethod(url, "POST", reqData)
 
