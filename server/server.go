@@ -15,6 +15,11 @@ type RequestData struct {
 	Balance string `json:"balance"`
 }
 
+type PutRequestData struct {
+	Name    string `json:"name"`
+	Balance string `json:"balance"`
+}
+
 func ApiTest() {
 	r := gin.Default()
 	tableStruct := &OjtInfo{}
@@ -33,7 +38,6 @@ func ApiTest() {
 			if err != nil {
 				logger.Log.Error().Msgf("DB Get Name error :", err.Error())
 			}
-
 			if dataCount != 0 {
 				c.JSON(200, gin.H{
 					"message": fmt.Sprintf("%s 조회에 성공하였습니다", nameParam),
@@ -49,10 +53,49 @@ func ApiTest() {
 
 	// PUT 요청
 	r.PUT("/put", func(c *gin.Context) {
-		id := c.Param("id")
-		c.JSON(http.StatusOK, gin.H{
-			"message": fmt.Sprintf("PUT request for resource with ID %s", id),
-		})
+		var PutrequestData PutRequestData
+		idParam := c.Query("id")
+		err := c.ShouldBindJSON(&PutrequestData)
+
+		if err != nil || PutrequestData.Name == "" || idParam == "" {
+			c.JSON(http.StatusBadRequest, gin.H{"error": "input 파라미터의 입력 형식이 잘못되었거나 필드의 데이터가 없습니다"})
+		} else {
+			nameParam := PutrequestData.Name
+			balanceParam := PutrequestData.Balance
+
+			dataList := make([]OjtInfo, 0)
+			data := OjtInfo{
+				Id:      idParam,
+				Name:    nameParam,
+				Balance: balanceParam,
+			}
+			dataList = append(dataList, data)
+
+			query := make(map[string]interface{}, 0)
+			query["id = ?"] = idParam
+
+			dataCount, err := datastore.DBService().GetCountCustomQuery(tableStruct, query)
+			if err != nil {
+				logger.Log.Error().Msgf("DB Get Name error :", err.Error())
+			}
+			if dataCount != 0 {
+				_, err := datastore.DBService().UpsertData(dataList)
+				if err != nil {
+					logger.Log.Error().Msgf("Update Data Error :", err.Error())
+				}
+				c.JSON(200, gin.H{
+					"message": fmt.Sprintf("Id : %s, name : %s 업데이트 성공하였습니다", idParam, nameParam),
+				})
+			} else {
+				_, err := datastore.DBService().CreateData(dataList)
+				if err != nil {
+					logger.Log.Error().Msgf("DB Add Data error :", err.Error())
+				}
+				c.JSON(200, gin.H{
+					"message": fmt.Sprintf("Id : %s, name : %s 데이터를 추가하였습니다", idParam, nameParam),
+				})
+			}
+		}
 	})
 
 	// DELETE 요청

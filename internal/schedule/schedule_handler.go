@@ -16,6 +16,8 @@ func OjtProjectScheduler() {
 		client.GetApiData("정광필")
 		client.PostApiData("7", "임영웅", "100")
 		client.DeleteApiData("7", "임영웅")
+		client.PutApiData("1", "네이마르", "500")
+		//fmt.Println("test")
 	})
 
 	gocron.StartAsync()

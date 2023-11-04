@@ -1,7 +1,7 @@
 package server
 
 type OjtInfo struct {
-	Id      string `gorm:"column:id"`
+	Id      string `gorm:"primarykey;column:id"`
 	Name    string `gorm:"column:name"`
 	Balance string `gorm:"column:balance"`
 }
