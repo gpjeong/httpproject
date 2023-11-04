@@ -5,13 +5,11 @@ import (
 	"github.com/common-nighthawk/go-figure"
 	"httpproject/internal/config"
 	"httpproject/internal/datastore"
-	"httpproject/internal/schedule"
 	"httpproject/rest"
 	"httpproject/server"
 	lr "httpproject/util/logger"
 	"runtime"
 	"strings"
-	"sync"
 	"time"
 )
 
@@ -52,19 +50,6 @@ func ServerRun() {
 	config.DefaultServiceConfigFromEnv()
 	rest.NewClientInit()
 	datastore.TaskManger = datastore.NewTaskManager()
-
-	var wg sync.WaitGroup
-	wg.Add(2)
-
-	go func() {
-		defer wg.Done()
-		server.ApiTest()
-	}()
-	go func() {
-		defer wg.Done()
-		schedule.OjtProjectScheduler()
-	}()
-
-	wg.Wait()
+	server.ApiTest()
 
 }
