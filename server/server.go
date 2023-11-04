@@ -20,6 +20,13 @@ type PutRequestData struct {
 	Balance string `json:"balance"`
 }
 
+type DbData struct {
+	Id      string
+	Name    string
+	balance string
+	test    string
+}
+
 func ApiTest() {
 	r := gin.Default()
 	tableStruct := &OjtInfo{}
@@ -76,8 +83,6 @@ func ApiTest() {
 				if putRequestData.Balance != "" {
 					balanceParam = putRequestData.Balance
 				}
-				fmt.Println("name body :", nameParam)
-				fmt.Println("balance body :", balanceParam)
 				dataList := make([]OjtInfo, 0)
 				data := OjtInfo{
 					Id:      idParam,
@@ -165,10 +170,87 @@ func ApiTest() {
 
 	// PATCH 요청
 	r.PATCH("/patch", func(c *gin.Context) {
-		id := c.Param("id")
-		c.JSON(http.StatusOK, gin.H{
-			"message": fmt.Sprintf("PATCH request for resource with ID %s", id),
-		})
+		idParam := c.Query("id")
+		var nameParam string
+		var balanceParam string
+
+		if idParam == "" {
+			c.JSON(http.StatusBadRequest, gin.H{"error": "input 파라미터의 입력 형식이 잘못되었거나 필드의 데이터가 없습니다"})
+		} else {
+			var putRequestData PutRequestData
+
+			// ShouldBindJSON은 omitempty 태그의 영향을 받지 않음
+			if err := c.ShouldBindJSON(&putRequestData); err == nil {
+				if putRequestData.Name == "" {
+					nameParam = ""
+				}
+				if putRequestData.Balance == "" {
+					balanceParam = ""
+				}
+				if putRequestData.Name != "" {
+					nameParam = putRequestData.Name
+				}
+				if putRequestData.Balance != "" {
+					balanceParam = putRequestData.Balance
+				}
+				dataList := make([]OjtInfo, 0)
+				data := OjtInfo{
+					Id:      idParam,
+					Name:    nameParam,
+					Balance: balanceParam,
+				}
+				dataList = append(dataList, data)
+
+				query := make(map[string]interface{}, 0)
+				query["id = ?"] = idParam
+
+				dataCount, err := datastore.DBService().GetCountCustomQuery(tableStruct, query)
+				if err != nil {
+					logger.Log.Error().Msgf("DB Get Name error :", err.Error())
+				}
+				if dataCount != 0 {
+					if nameParam == "" || balanceParam == "" {
+						data, err := datastore.DBService().GetData(idParam, tableStruct)
+						if err != nil {
+							logger.Log.Error().Msgf("DB Get Data error :", err.Error())
+						}
+						if ptr, ok := data.(*OjtInfo); ok {
+							if nameParam == "" {
+								nameParam = ptr.Name
+							}
+							if balanceParam == "" {
+								balanceParam = ptr.Balance
+							}
+							dataList := make([]OjtInfo, 0)
+							data := OjtInfo{
+								Id:      idParam,
+								Name:    nameParam,
+								Balance: balanceParam,
+							}
+							dataList = append(dataList, data)
+
+							_, err := datastore.DBService().UpsertData(dataList)
+							if err != nil {
+								logger.Log.Error().Msgf("Update Data Error :", err.Error())
+							}
+							c.JSON(200, gin.H{
+								"message": fmt.Sprintf("Id : %s 데이터 업데이트 성공했습니다", idParam),
+							})
+
+						}
+
+					}
+
+				} else {
+					c.JSON(200, gin.H{
+						"message": fmt.Sprintf("Id : %s 데이터 업데이트 실패했습니다", idParam),
+					})
+				}
+
+			} else {
+				c.JSON(http.StatusBadRequest, gin.H{"error": "input body 입력 형식이 잘못되었습니다"})
+			}
+		}
 	})
 
 	// POST 요청
